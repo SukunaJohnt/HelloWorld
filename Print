@@ -115,8 +115,8 @@ if getgenv().Settings.autocreateandjoinportal == true then
             game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("SellUnit"):FireServer(unitsell)  
          end 
         local tower = 1
-        spawn(function()
-        while task.wait(.4) do 
+
+        while task.wait() do 
             if not recordTowers[tower] then 
                 break 
             end
@@ -134,7 +134,6 @@ if getgenv().Settings.autocreateandjoinportal == true then
                 tower = tower + 1 
                 end 
             end 
-    end)
     end
     
     -- 
