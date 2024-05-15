@@ -94,6 +94,7 @@ if getgenv().Settings.autocreateandjoinportal == true then
      end
      
      local function place(info)
+      repeat wait(.1) until tonumber(info.moneyreq) <= game.Players.LocalPlayer.Money.Value
         local args = {
             [1] = info.character,
             [2] = stcf(info.position),
