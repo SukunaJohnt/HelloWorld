@@ -110,7 +110,7 @@ if getgenv().Settings.autocreateandjoinportal == true then
         end 
         
         local function upgrade(info)
-            local max_upgrade = game:GetService("Workspace").Unit[game.Players.LocalPlayer.Name][info.character].Stats.TotalValue.Value
+            local max_upgrade = game:GetService("Workspace").Unit[game.Players.LocalPlayer.Name]:WaitForChild(info.character).Stats.TotalValue.Value
             repeat wait(.1) until tonumber(info.maxupgrades) <= max_upgrade
             local args = {
                 [1] = workspace:WaitForChild("Unit"):WaitForChild(game.Players.LocalPlayer.Name):WaitForChild(info.character)
